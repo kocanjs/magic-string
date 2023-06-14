@@ -11,6 +11,9 @@
 		"type": "git",
 		"url": "https://github.com/kocanjs/magic-string.git"
 	},
+	"scripts": {
+		"build": "tsc"
+	},
 	"devDependencies": {
 		"typescript": "4.8.4",
 		"wite": "latest"
