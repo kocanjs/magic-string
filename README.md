@@ -11,7 +11,7 @@ This library aims to provide codegen helpers and data structure for Kdu language
 ```ts
 import {
   toString,
-  overwrite, // not yet support
+  replace,
 } from '@nkduy/magic-string';
 
 /** @type {import('@kocan/kdu-language-core').KduLanguagePlugin} */
@@ -25,10 +25,10 @@ const plugin = () => {
         const s = embeddedFile.content;
         toString(s); // 'problems = 99'
 
-        overwrite(s, 0, 8, 'answer'); // not yet support
+				replace(s, 'problems', 'answer');
         toString(s); // 'answer = 99'
 
-        overwrite(s, 11, 13, '42'); // not yet support
+				replace(s, '99', '42');
         toString(s); // 'answer = 42'
 
         // add string by Array method directly
@@ -43,7 +43,7 @@ const plugin = () => {
               block.name, // source
               0, // content offset in source
               {
-                 // langauge capabilities to enable in this segment
+                 // language capabilities to enable in this segment
                 hover: true,
                 references: true,
                 definition: true,
