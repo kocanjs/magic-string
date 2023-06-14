@@ -17,6 +17,8 @@ import {
 /** @type {import('@kocan/kdu-language-core').KduLanguagePlugin} */
 const plugin = () => {
 	return {
+		name: 'example-kdu-language-plugin',
+		version: 1,
 		resolveEmbeddedFile(fileName, sfc, embeddedFile) {
 			if (embeddedFile.fileName.replace(fileName, '').match(/^\.(js|ts|jsx|tsx)$/)) {
 
